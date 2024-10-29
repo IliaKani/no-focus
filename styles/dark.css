@@ -4,7 +4,42 @@
   переключая тему
 */
 
+:root.theme-dark {
+  --background-image: url(../images/cover-image-dark.png);
+  --color-theme: #000028;
+  --accent-color: #FF0070;
+  --text-shadow: #FF0070;
+  --accent-text-color: #000028;
+  --main-text-color: #F1B2CE;
+  --main-header-text-color: #DB00FF;
+  --font-family-style: "IBM Plex Mono";
+  --main-font-size: 18px;
+  --header-font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  --main-font-style: normal;
+  --main-font-weight: 400;
+  --accent-font-weight: 700;
+  --main-line-height: 130%;
+  --line-heiht: normal;
+  --header-text-line-height: 82.5%;
+}
+
 .page.theme_dark {
+  --background-image: url(../images/cover-image-dark.png);
+  --color-theme: #000028;
+  --accent-color: #FF0070;
+  --text-shadow: #FF0070;
+  --accent-text-color: #000028;
+  --main-text-color: #F1B2CE;
+  --main-header-text-color: #DB00FF;
+  --font-family-style: "IBM Plex Mono";
+  --main-font-size: 18px;
+  --header-font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  --main-font-style: normal;
+  --main-font-weight: 400;
+  --accent-font-weight: 700;
+  --main-line-height: 130%;
+  --line-heiht: normal;
+  --header-text-line-height: 82.5%;
   /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя

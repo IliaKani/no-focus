@@ -1,5 +1,417 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
+/* .page {
+  сохраните в разметке и стилях класс page. На его основе работает скрипт. 
+} */
+
 
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  min-inline-size: 100%;
+  background-image: var(--background-image);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: var(--font-family-style, sans-serif);
 }
+
+.header {
+  min-inline-size: 100%;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  position: relative;
+  z-index: 0;
+  height: 100vh;
+  min-height: 668px;
+  padding: 2.6%; /*дописать медиа*/
+}
+
+.rec {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  z-index: 1;
+  top: 11px;
+  right: 26px;
+  height: 26px;
+  width: 33px;
+}
+
+.rec-style {
+  color: var(--accent-color);
+  font-family: var(--font-family-style, sans-serif);
+  font-size: var(--main-font-size);
+  font-style: var(--main-font-style);
+  font-weight: var(--main-font-weight);
+  line-height: 138.889%;
+}
+
+.rec::after {
+  content: url("../images/Ellipse 4.png");
+}
+
+.header__theme-menu {
+  display: flex;
+  align-items: center;
+  justify-self: end;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+/*Медиа-запросы для блока меню в хэдере*/
+@media (min-width: 1024px) {
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+    margin-top: 10px;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+}
+
+.header__theme-menu-item {
+  padding-left: 13px;
+  padding-right: 13px;
+  padding-top: 1.5px;
+  padding-bottom: 1.5px;
+  color: var(--accent-color);
+  font-size: var(--main-font-size);
+  font-style: var(--main-font-style);
+  font-weight: var(--main-font-weight);
+  line-height: var(--main-line-height);
+}
+
+.header__theme-menu-button {
+  all: unset;
+  /* background-color: transparent;
+  border: none;
+  text-transform: lowercase;
+  padding: 0px;
+  margin: 0px; */
+  text-transform: lowercase;
+} 
+
+.header__theme-menu-button:focus { 
+  outline: none; 
+} 
+
+.header__theme-menu-button:focus-visible { 
+  border-bottom: 1px solid;
+}
+
+.header__theme-menu-item:hover { 
+  outline: 1px solid ; 
+  cursor: pointer;
+}
+
+.header__theme-menu-button:active {
+  cursor: pointer;
+  border-bottom: none; 
+  border: 1px solid;
+}
+
+.text-main {
+  color: var(--main-header-text-color);
+  text-shadow: 4px 4px 0px var(--text-shadow);
+  font-size: var(--header-font-size);
+  line-height: var(--header-text-line-height);
+}
+
+.main-header{
+  display: flex;
+  justify-content: start;
+  align-items: start;
+}
+
+.title-decor {
+  display: flex;
+  align-items: center;
+  background-color: var(--accent-color);
+}
+
+.accent-text {
+  color: var(--accent-text-color);
+  font-size: var(--main-font-size);
+  font-style: var(--main-font-style);
+  font-weight: var(--accent-font-weight);
+  line-height: var(--main-line-height);
+}
+
+.header-accent-text .title-decor {
+  margin-top: 55px;
+}
+
+/*Медиазапросы для хэдера*/
+
+@media (min-width: 768px) {
+  /* .header {
+    min-height: 1024px;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr min-content 1fr;
+  }
+
+  .header-accent-text {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-start: 3;
+    align-self: center;
+  }
+
+  .main-header {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-start: 3;
+  }
+
+  .header__theme-menu {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    align-self: center;
+    justify-self: end;
+  } */
+
+  .header {
+    min-height: 1024px;
+    height: 100vh;
+    display: flex;
+  }
+
+  .header-accent-text {
+    
+  }
+
+  .main-header {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    
+  }
+
+  .header__theme-menu {
+    justify-content: center;
+    align-items: start;
+  }
+}
+
+
+.main {
+  padding: 40px 10px;
+  min-inline-size: 100%;
+  background-color: var(--color-dark-theme);
+}
+
+.main-points {
+  color: var(--accent-color);
+  font-family: var(--font-family-style);
+  font-size: var(--main-font-size);
+  font-style: var(--main-font-style);
+  font-weight: var(--accent-font-weight);
+  line-height: var(--main-line-height);
+  margin-block-end: 20px;
+}
+
+/*Медиазапросы для карточек в main*/
+
+@media (min-width: 768px) {
+  .first-article {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
+
+  .header-dophamine {  /*как оптимизировать, чтобы без отдельных названий классов? + перенос заголовка построчно*/
+    grid-column-start: 2;
+    grid-column-end: 3 ;
+    grid-row-start: 4 ;
+    grid-row-end: 5;
+  }
+
+  .first-card {
+    grid-column-start: 2;
+    grid-column-end: 3 ;
+    grid-row-start: 2 ;
+    grid-row-end: 3;
+  }
+
+  .second-card {
+    grid-column-start: 2 ;
+    grid-column-end: 3;
+    grid-row-start: 5;
+    grid-row-end: 6;
+  }
+
+  @media (min-width: 1024px) {
+    .second-article {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    }
+
+    .second-article:first-child {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    }
+    
+  }
+}
+
+.title-margin {
+  margin-block-end: 10px; /*ЗНАЧЕНИЯ ПЕРЕВЕСТИ В ПРОЦЕНТЫ?*/
+}
+
+.advices-title {
+  margin-block-end: 20px;
+}
+
+.card {
+  color: var(--main-text-color);
+  font-family: var(--font-family-style);
+  font-size: var(--main-font-size);
+  font-style: var(--main-font-style);
+  font-weight: var(--main-font-weight);
+  line-height: var(--main-line-height);
+  margin-block-end: 20px;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.link-style {
+  text-shadow: 2px 2px 0px var(--text-shadow);
+  font-family: var(--font-family-style, sans-serif);
+  font-size: var(--main-font-size);
+  font-style: var(--main-font-style);
+  font-weight: var(--main-font-weight);
+  line-height: var(--line-heiht);
+}
+
+.link:hover {
+  border-bottom: 1px solid;
+}
+ 
+.link:focus {
+  outline: 1px solid; 
+}
+
+.card:last-child {
+  margin-bottom: 50px; /*ЗНАЧЕНИЯ ПЕРЕВЕСТИ В ПРОЦЕНТЫ?*/
+}
+
+.subtitle-text {
+  color: var(--accent-text-color);
+  font-family: var(--font-family-style, sans-serif);
+  font-size: var(--main-font-size);
+  font-style: var(--main-font-style);
+  font-weight: var(--main-font-weight);
+  line-height: var(--main-line-height); 
+}
+
+.images-block {
+  display: grid;
+  flex-direction: column;
+  max-width: 100%;
+  gap: 10px;
+}
+
+.image {
+  max-width: 100%;
+}
+
+/*Медиазапросы для блока с кртинками*/
+
+@media (min-width: 768px) {
+  .images-block {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  .image-1 {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  .image-2 {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 3;
+    grid-column-end: 4;
+  }
+
+  .image-3 {
+    grid-row-start: 2;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .image-4 {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+
+  .image-5 {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 4;
+  }
+  }
+
+.footer {
+  display: flex;
+  padding: 2.6%;
+  height: 100vh;
+  background: var(--color-dark-theme);
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  height: 100vh;
+  min-height: 667px ;
+}
+
+.footer-text-shadow {
+  text-shadow: 2px 2px 0px var(--text-shadow);
+}  
+
+.decorated-zone::after {
+  position: absolute;
+  content: "";
+  width: 25px;
+  height: 25px;
+  bottom: 10px;
+  left: 10px;
+  border-inline-start: 1px solid var(--accent-color);
+  border-block-end: 1px solid var(--accent-color);
+}
+
+.decorated-zone::before {
+  position: absolute;
+  content: "";
+  width: 25px;
+  height: 25px;
+  top: 10px;
+  right: 10px;
+  border-block-start: 1px solid var(--accent-color);
+  border-inline-end: 1px solid var(--accent-color);
+} 
+ 

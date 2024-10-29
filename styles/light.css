@@ -4,9 +4,72 @@
   переключая тему
 */
 
+:root.theme-light {
+  --background-image: url(../images/cover-image-light.png);
+  --color-light-theme: #FFF1F7;
+  --accent-color: #FF8DCB;
+  --accent-text-color: #353430;
+  --main-text-color: #353430;
+  --main-header-text-color: #FFC2E6;
+  --main-font-size: 18px;
+  --header-font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  --main-font-style: normal;
+  --main-font-weight: 400;
+  --accent-font-weight: 700;
+  --main-line-height: 130%;
+  --line-heiht: normal;
+  --header-text-line-height: 82.5%; 
+}
+ 
 .page.theme_light {
+  --background-image: url(../images/cover-image-light.png);
+  --color-theme: #FFF1F7;
+  --accent-color: #FF8DCB;
+  --accent-text-color: #353430;
+  --text-shadow: #FF0070;
+  --main-text-color: #353430;
+  --main-header-text-color: #FFC2E6;
+  --main-font-size: 18px;
+  --header-font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  --main-font-style: normal;
+  --main-font-weight: 400;
+  --accent-font-weight: 700;
+  --main-line-height: 130%;
+  --line-heiht: normal;
+  --header-text-line-height: 82.5%; 
+  
   /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
 }
+
+
+
+/* Остальные стили */
+
+@media (prefers-color-scheme: light) {
+:root {
+  --background-image: url(../images/cover-image-light.png);
+  --color-theme: #FFF1F7;
+  --accent-color: #FF8DCB;
+  --accent-text-color: #353430;
+  --text-shadow: #FF0070;
+  --main-text-color: #353430;
+  --main-header-text-color: #FFC2E6;
+  --main-font-size: 18px;
+  --header-font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  --main-font-style: normal;
+  --main-font-weight: 400;
+  --accent-font-weight: 700;
+  --main-line-height: 130%;
+  --line-heiht: normal;
+  --header-text-line-height: 82.5%; 
+      /* Дублируем переменные светлой темы */    
+  }
+   
+}
+
+/* Остальные стили */ 
+
+  
