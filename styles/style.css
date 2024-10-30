@@ -3,7 +3,6 @@
   сохраните в разметке и стилях класс page. На его основе работает скрипт. 
 } */
 
-
 .page {
   min-inline-size: 100%;
   background-image: var(--background-image);
@@ -19,7 +18,6 @@
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
   position: relative;
-  z-index: 0;
   height: 100vh;
   min-height: 668px;
   padding: 2.6%;
@@ -29,7 +27,6 @@
   display: flex;
   justify-content: center;
   position: absolute;
-  z-index: 1;
   top: 11px;
   right: 26px;
   height: 26px;
@@ -69,7 +66,7 @@
   right: 10px;
   border-block-start: 1px solid var(--border-color-dark);
   border-inline-end: 1px solid var(--border-color-dark);
-} 
+}
 
 .header__theme-menu {
   display: flex;
@@ -99,24 +96,24 @@
 .header__theme-menu-button {
   all: unset;
   text-transform: lowercase;
-} 
+}
 
-.header__theme-menu-button:focus { 
-  outline: none; 
-} 
+.header__theme-menu-button:focus {
+  outline: none;
+}
 
-.header__theme-menu-button:focus-visible { 
+.header__theme-menu-button:focus-visible {
   border-bottom: 1px solid;
 }
 
-.header__theme-menu-item:hover { 
-  outline: 1px solid ; 
+.header__theme-menu-item:hover {
+  outline: 1px solid;
   cursor: pointer;
 }
 
 .header__theme-menu-button:active {
   cursor: pointer;
-  border-bottom: none; 
+  border-bottom: none;
   border: 1px solid;
 }
 
@@ -127,7 +124,7 @@
   line-height: var(--header-text-line-height);
 }
 
-.main-header{
+.main-header {
   display: flex;
   justify-content: start;
   align-items: start;
@@ -151,7 +148,6 @@
 .header-accent-text .title-decor {
   margin-top: 55px;
 }
-
 
 /*Медиазапросы для хэдера*/
 
@@ -184,7 +180,7 @@
   .text-main {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
-  
+
   .header-accent-text .title-decor {
     margin-top: 0px;
   }
@@ -205,7 +201,7 @@
     border-inline-start: 1px solid var(--border-color-dark);
     border-block-end: 1px solid var(--border-color-dark);
   }
-  
+
   .decorated-zone::before {
     position: absolute;
     content: "";
@@ -215,7 +211,7 @@
     right: 20px;
     border-block-start: 1px solid var(--border-color-dark);
     border-inline-end: 1px solid var(--border-color-dark);
-  } 
+  }
 }
 
 @media (width >= 1024px) {
@@ -229,19 +225,10 @@
     align-self: start;
   }
 
-  .header__theme-menu {
-    justify-self: center;
-    align-self: start;
-    margin-top: 10px;
-  }
-
   .header__theme-menu-list {
     flex-direction: row;
   }
-
 }
-
-/**/
 
 .main {
   padding: 40px 10px;
@@ -251,7 +238,7 @@
 
 .main-points {
   color: var(--accent-color);
-  font-family: var(--font-family-style);
+  font-family: var(--font-family-style, sans-serif);
   font-size: var(--main-font-size);
   font-style: var(--main-font-style);
   font-weight: var(--accent-font-weight);
@@ -259,11 +246,78 @@
   margin-block-end: 20px;
 }
 
-/*Медиазапросы для карточек в main - Уточнить размеры*/
 
-@media (min-width: 768px) {
+
+.title-margin {
+  margin-block-end: 10px;
+}
+
+.content-subtitle {
+  margin-block-end: 20px;
+}
+
+.card {
+  color: var(--main-text-color);
+  font-family: var(--font-family-style, ans-serif);
+  font-size: var(--main-font-size);
+  font-style: var(--main-font-style);
+  font-weight: var(--main-font-weight);
+  line-height: var(--main-line-height);
+  margin-block-end: 20px;
+}
+
+.card:last-of-type {
+  margin-bottom: 50px;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.link-style {
+  text-shadow: 2px 2px 0px var(--text-shadow);
+  font-family: var(--font-family-style, sans-serif);
+  font-size: var(--main-font-size);
+  font-style: var(--main-font-style);
+  font-weight: var(--main-font-weight);
+  line-height: var(--line-heiht);
+}
+
+.link:hover {
+  border-bottom: 1px solid;
+}
+
+.link:focus {
+  outline: 1px solid;
+}
+
+.subtitle-text {
+  color: var(--accent-text-color);
+  font-family: var(--font-family-style, sans-serif);
+  font-size: var(--main-font-size);
+  font-style: var(--main-font-style);
+  font-weight: var(--main-font-weight);
+  line-height: var(--main-line-height);
+}
+
+.images-block {
+  display: grid;
+  flex-direction: column;
+  max-width: 100%;
+  gap: 10px;
+}
+
+.image {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+}
+
+/*Медиазапросы для карточек в main*/
+
+@media (width >= 768px) {
   .main {
-    padding: 5.21% 2.60%;
+    padding: 7.81% 2.6%;
     min-width: 100%;
   }
 
@@ -275,63 +329,69 @@
     top: 22px;
     right: 35px;
     width: 33px;
-}
-
-  .main-points {
-    /* max-width: 315px; */
   }
 
   .first-article {
     display: grid;
     grid-template-columns: 30% 1fr;
-    column-gap: 20px;
+    gap: 20px;
   }
 
-  .header-dophamine {
-    grid-column-start: 2;
-    grid-column-end: 3;
+  .main-points {
+    align-self: start;
+    max-width: 236px;
+    justify-self: start;
   }
 
-  .first-card {
-    grid-column-start: 2;
-    grid-column-end: 3;
+  .text-content {
+    justify-self: end;
+    max-width: 472px;
   }
 
-  .second-card {
-    grid-column-start: 2;
-    grid-column-end: 3;
-  }
-
-  .third-article {
+  article.third-article {
     display: grid;
-    grid-template-columns: min-content 1fr;
-    column-gap: 20px;
+    grid-template-columns: 30% 1fr;
+    gap: 20px;
   }
 
-  
-  .subtitle-text {
-    grid-column-start: 2;
-    grid-column-end: 3;
+  .third-article.main-points {
+    grid-column-start: 1;
+    grid-column-end: 2;
   }
 
-  .card {
-    grid-column-start: 2;
-    grid-column-end: 3;
+  .text-article-content {
+    max-width: 472px;
+    justify-self: end;
   }
-
-  .card:last-child {
-    margin-bottom: 80px; /*ЗНАЧЕНИЯ ПЕРЕВЕСТИ В ПРОЦЕНТЫ? поправить нижний отступ у последнего параграфа*/
-  }
-
-
-  @media (min-width: 1024px) {
-    .second-article {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, min-content);
-    row-gap: 20px;
-    column-gap: 20px;
+  .card:last-of-type {
     margin-bottom: 80px;
+  }
+  
+}
+
+  @media (width >= 1024px) {
+    .main {
+      padding: 60px 20px;
+      min-width: 100%;
+    }
+
+    .main-points {
+      max-width: 315px;
+      justify-self: start;
+    }
+
+    .text-content {
+      min-width: 649px;
+    }
+    .second-article {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, min-content);
+      column-gap: 20px;
+    }
+
+    .text-article-content {
+      min-width: 649px;
     }
 
     .second-article .multitask {
@@ -373,77 +433,10 @@
       grid-row-end: 4;
     }
 
-    
-
-
+    .card:last-of-type {
+      margin-bottom: 80px;
+    }
   }
-}
-/**/
-
-.title-margin {
-  margin-block-end: 10px; /*ЗНАЧЕНИЯ ПЕРЕВЕСТИ В ПРОЦЕНТЫ?*/
-}
-
-.advices-title {
-  margin-block-end: 20px;
-}
-
-.card {
-  color: var(--main-text-color);
-  font-family: var(--font-family-style);
-  font-size: var(--main-font-size);
-  font-style: var(--main-font-style);
-  font-weight: var(--main-font-weight);
-  line-height: var(--main-line-height);
-  margin-block-end: 20px;
-}
-
-.link {
-  text-decoration: none;
-}
-
-.link-style {
-  text-shadow: 2px 2px 0px var(--text-shadow);
-  font-family: var(--font-family-style, sans-serif);
-  font-size: var(--main-font-size);
-  font-style: var(--main-font-style);
-  font-weight: var(--main-font-weight);
-  line-height: var(--line-heiht);
-}
-
-.link:hover {
-  border-bottom: 1px solid;
-}
- 
-.link:focus {
-  outline: 1px solid; 
-}
-
-.card:last-child {
-  margin-bottom: 50px; /*ЗНАЧЕНИЯ ПЕРЕВЕСТИ В ПРОЦЕНТЫ?*/
-}
-
-.subtitle-text {
-  color: var(--accent-text-color);
-  font-family: var(--font-family-style, sans-serif);
-  font-size: var(--main-font-size);
-  font-style: var(--main-font-style);
-  font-weight: var(--main-font-weight);
-  line-height: var(--main-line-height); 
-}
-
-.images-block {
-  display: grid;
-  flex-direction: column;
-  max-width: 100%;
-  gap: 10px;
-}
-
-.image {
-  width: 100%;
-  object-fit: cover;
-  height: 100%;
-}
 
 /*Медиазапросы для блока с кртинками*/
 
@@ -451,8 +444,7 @@
   .images-block {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    /* grid-template-rows: repeat(4, minmax(192px, 1fr)); */
-    grid-template-rows: 192px 230px repeat(2, 1fr);
+    grid-template-rows: 192px 230px 1fr;
     gap: 20px;
     grid-auto-rows: 192px;
   }
@@ -462,12 +454,10 @@
   }
 
   .image-1 {
-    /*свернуть в одну строку grid area - последовательность!*/
     grid-row-start: 1;
     grid-row-end: 2;
     grid-column-start: 1;
     grid-column-end: 3;
-    /* max-height: 192px; */
   }
 
   .image-2 {
@@ -499,7 +489,17 @@
     grid-column-start: 2;
     grid-column-end: 4;
   }
+}
+
+@media (width >= 1024px) {
+  .images-block {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 260px 315px 1fr;
+    gap: 20px;
+    grid-auto-rows: 260px;
   }
+}
 
 .footer {
   display: flex;
@@ -511,12 +511,9 @@
   align-items: center;
   z-index: 1;
   height: 100vh;
-  min-height: 667px ;
+  min-height: 667px;
 }
 
 .footer-text-shadow {
   text-shadow: 2px 2px 0px var(--text-shadow);
-}  
-
-
- 
+}
