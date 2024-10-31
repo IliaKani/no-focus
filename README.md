@@ -24,11 +24,11 @@ The layout of the site is available on [Figma](https://www.figma.com/design/lCqD
 Open the index.html file in your browser to view the site.
 
 ## Features
-Responsive Design: The site is optimized for various devices, starting with mobile.
-Light and Dark Themes: Support for switching between light and dark themes.
+- Responsive Design: The site is optimized for various devices, starting with mobile.
+- Light and Dark Themes: Support for switching between light and dark themes.
 
 ## Content
-What to do when you can't do anything
-Why is it so hard to concentrate
-What reduces concentration?
-5 simple (not really) tips
+- What to do when you can't do anything
+- Why is it so hard to concentrate
+- What reduces concentration?
+- 5 simple (not really) tips
