@@ -4,25 +4,6 @@
   переключая тему
 */
 
-:root.theme-dark {
-  --background-image: url(../images/cover-image-dark.png);
-  --color-theme: #000028;
-  --accent-color: #ff0070;
-  --text-shadow: #ff0070;
-  --accent-text-color: #000028;
-  --main-text-color: #f1b2ce;
-  --main-header-text-color: #db00ff;
-  --font-family-style: "IBM Plex Mono";
-  --main-font-size: 18px;
-  --header-font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  --main-font-style: normal;
-  --main-font-weight: 400;
-  --accent-font-weight: 700;
-  --main-line-height: 130%;
-  --line-heiht: normal;
-  --header-text-line-height: 82.5%;
-}
-
 .page.theme_dark {
   --background-image: url(../images/cover-image-dark.png);
   --color-theme: #000028;
@@ -40,7 +21,8 @@
   --main-line-height: 130%;
   --line-heiht: normal;
   --header-text-line-height: 82.5%;
-  --border-color-dark: #ff0070;
+  --border-color: #ff0070;
+  --menu-color: #ff0070;
   /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
@@ -49,7 +31,7 @@
 
 .page.theme_dark .decorated-zone::after,
 .page.theme_dark .decorated-zone::before {
-  border-color: var(--border-color-dark);
+  border-color: var(--border-color);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -70,11 +52,12 @@
     --main-line-height: 130%;
     --line-heiht: normal;
     --header-text-line-height: 82.5%;
-    --border-color-dark: #ff0070;
+    --border-color: #ff0070;
+    --menu-color: #ff0070;
   }
 
   .page.theme_dark .decorated-zone::after,
   .page.theme_dark .decorated-zone::before {
-    border-color: var(--border-color-dark);
+    border-color: var(--border-color);
   }
 }
